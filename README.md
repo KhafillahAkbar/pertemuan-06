@@ -55,11 +55,20 @@ Tugas (Pertanyaan Praktikum)
 Berdasarkan pada praktikum sebelumnya yang telah dilakukan, beberapa pertanyaan terkait praktikum perlu diselesaikan yaitu sebagai berikut.
 
 1. Apa kegunaan dari kode ini import { useEffect } from "react"; Pada file pages/_app.tsx? jelaskan
-2. Jika pada file pages/_app.tsx kita tidak menggunakan useEffect (menghapus baris 3, dan baris 9-11, apa yang akan terjadi?
+-  Kode tersebut digunakan untuk mengimport use effect library. Di kode tersebut use effect digunakan untuk mengatur efek komponen react seperti menjalankan kode setelah dirender. Juga digunakan untuk memastikan script bootstrap hanya dimuat sekali.
+2. Jika pada file pages/_app.tsx kita tidak menggunakan useEffect (menghapus baris 3, dan baris 9-11, apa yang akan terjadi?)
+- script Bootstrap tidak akan dimuat secara dinamis setelah komponen _app.tsx dirender.
 3. Mengapa di react/nextjs penulisan tag html untuk class, harus diganti menjadi className ?
+-JavaScript memiliki kata kunci class yang digunakan untuk mendefinisikan kelas dalam kode JavaScript. Karena JSX (JavaScript XML) digunakan dalam React dan Next.js untuk menuliskan markup HTML dalam JavaScript, maka menggunakan class sebagai atribut pada elemen JSX dapat menimbulkan konflik dengan kata kunci JavaScript class.
 4. Apakah store pada nextjs bisa menyimpan banyak redux reducer?
+-Bisa, dalam Next.js store Redux yang dibuat dengan bisa menyimpan banyak reducer. 
 5. Jelaskan kegunaan dari file store.js!
+- a. Menggabungkan Reducer
+- b. Membuat Redux Store
+- c. Membuat Persistor
 6. Pada file pages/login.tsx, apa maksud dari kode ini ?
  const { isLogin } = useSelector((state) => state.auth);
+- useSelector digunakan untuk mendapatkan value dari slice auth dalam state Redux. Slice ini kemungkinan berisi informasi tentang status login pengguna. isLogin kemungkinan berisi nilai yang menunjukkan apakah pengguna sudah login atau belum.
 7. Pada file pages/counter.tsx, apa maksud dari kode ini?
 const {totalCounter} = useSelector((state) => state.counter);
+- Dengan menggunakan useSelector, komponen  dapat mengakses nilai totalCounter yang ada di dalam state Redux dan menampilkan nilainya di dalam komponen tersebut. Pada kode ini nilai totalCounter  menunjukkan jumlah mobil yang dimiliki oleh pengguna, dan komponen ini memberikan interface untuk menambah atau mengurangi jumlah mobil tersebut dengan tombol "+" dan "-" yang ada di dalamnya.
